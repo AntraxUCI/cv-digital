@@ -9,88 +9,75 @@
 <body>
   <!-- header -->
   <header>
-    <h1>Juan Carlos Guardiola Rodriguez</h1>
-    <img src="img/photo_2025-12-04_13-42-16.jpg" alt="foto-mia" height="450">   <!-- imagen de CV -->
-    <p>Software Developer | Orlando, FL, United States</p>
-    <!-- Links to my difenrents contacts  -->
-    <address>
-      <p>
-        <a href="mailto:carlyasi.5831@gmail.com">carlyasi.5831@gmail.com</a> ·
-        <a href="tel:+14078682476">+1-407-868-2876</a> ·
-        <a href="https://www.linkedin.com/in/juan-carlos-guardiola-rodriguez-34843424a">LinkedLn</a> ·
-        <a href="https://github.com/AntraxUCI?tab=repositories">GitHub</a>
-      </p>
-    </address>
+    <div class="header-content">
+      <h1>Juan Carlos Guardiola Rodriguez</h1>
+      <img id="logo" src="img/photo_2025-12-04_13-42-16.jpg" alt="foto-mia" height="450">   <!-- imagen de CV -->
+      <p>Software Developer | Orlando, FL, United States</p>
+      <!-- Links to my difenrents contacts  -->
+      <address>
+        <p>
+          <a href="mailto:carlyasi.5831@gmail.com">carlyasi.5831@gmail.com</a> ·
+          <a href="tel:+14078682476">+1-407-868-2876</a> ·
+          <a href="https://www.linkedin.com/in/juan-carlos-guardiola-rodriguez-34843424a">LinkedLn</a> ·
+          <a href="https://github.com/AntraxUCI?tab=repositories">GitHub</a>
+        </p>
+      </address>
+    </div>
   </header>
+  <hr>
   <!-- main -->
   <main>
     <!-- profile section -->
-    <section aria-labelledby="profile">
-      <h2 id="profile">Profile</h2>
-        <p>Computer Science Engineer graduated in 2019 from the University of 
-          Computer Sciences in Cuba, with knowledge mainly in FrontEnd, including 
-          HTML5, JavaScript, CSS, CSS3, Bootstrap, React, React Native, and some 
-          BackEnd knowledge in Laravel, Symfony, Angular, among others.
-        </p>
-    </section>
+<section aria-labelledby="profile">
+  <h2 id="profile">Profile</h2>
+  <p>
+    Computer Science Engineer graduated in 2019 from the University of 
+    Computer Sciences in Cuba, with knowledge mainly in FrontEnd, including 
+    HTML5, JavaScript, CSS, CSS3, Bootstrap, React, React Native, and some 
+    BackEnd knowledge in Laravel, Symfony, Angular, among others.
+  </p>
+</section>
       <hr>
       <!-- skills section -->
-    <section aria-labelledby="skills">
-      <h2 id="skills">Skills</h2>
-         <table>
-           <theader>
-            <tr>
-              <th>Skill</th>
-              <th>Description</th>
-              <th>Skill Level</th>
-            </tr>
-           </theader>
-           <tbody>
-            <tr>
-              <td>HTML</td>
-              <td>Build semantic, structured web pages.</td>
-              <td>Expert</td>
-            </tr>
-            <tr>
-              <td>CSS</td>
-              <td>Style layouts, colors, and responsive designs.</td>
-              <td>Expert</td>
-            </tr>
-            <tr>
-              <td>Bootstrap</td>
-              <td>Create fast, responsive UI with components.</td>
-              <td>Expert</td>
-            </tr>
-            <tr>
-              <td>Git & GitHub</td>
-              <td>Version control, branches, and collaboration.</td>
-              <td>Expert</td>
-            </tr>
-            <tr>
-              <td>WSL</td>
-              <td>Run Linux tools inside Windows for development.</td>
-              <td>Intermediate</td>
-            </tr>
-            <tr>
-              <td>React</td>
-              <td>Build interactive, component-based web apps.</td>
-              <td>Expert</td>
-            </tr>
-           </tbody>
-         </table>
-        <!-- <ul>
-          <li>HTML semantic</li>
-          <li>HTML5</li>
-          <li>CSS</li>
-          <li>Git y GitHub</li>
-          <li>JavaScript</li>
-          <li>Angular</li>
-          <li>Larabel</li>
-          <li>React</li>
-          <li>Bootstrap</li>
-        </ul>
-         -->
-    </section>
+ <section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-columns">
+    <div class="skill-group">
+      <h3>Web Development</h3>
+      <ul>
+        <li>HTML & CSS</li>
+        <li>JavaScript</li>
+        <li>DOM Manipulation</li>
+        <li>Node.js & Express</li>
+        <li>Python & Flask</li>
+        <li>React & Redux</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Database</h3>
+      <ul>
+        <li>SQL</li>
+        <li>PostgreSQL</li>
+        <li>MongoDB</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Testing</h3>
+      <ul>
+        <li>Unit Testing with Jasmine</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Other</h3>
+      <ul>
+        <li>Git & GitHub</li>
+        <li>Command Line</li>
+        <li>Data Structures</li>
+        <li>Algorithms</li>
+      </ul>
+    </div>
+  </div>
+</section>
       <hr>
       <!-- proyects section -->
     <section aria-labelledby="proyects">
@@ -117,59 +104,51 @@
         </ul>
     </section>
     <hr>
+    <!-- Contact me Section -->
     <section aria-labelledby="contact-me">
-      <h2>Contact me</h2>
-      <form>
-        <label name="name" id="name">Name: 
-        <input type="text" placeholder="Enter yor name" name="name">
-        </label> <br>
-        <label name="email" id="email">Email: 
-        <input type="email" placeholder="Enter yor email" name="email">
-        </label><br>
-        <label name="organization" id="organization">Organization: 
-        <input type="text" placeholder="Enter yor Organization" name="organization">
-        </label><br>
-        <label name="role" id="organization">Role: 
-        <input type="text" placeholder="Enter yor Organization" name="role">
-        </label><br>
-      Razon for Contact:
-       <select name="razon_for_contact">
-                <option value="">--Select an Option--</option>
-                <option value="job_offer">Job Offer</option>
-                <option value="questions">Questions</option>
-                <option value="mentoring">Mentoring</option>
-        </select>
-        <fieldset name="whe_to_code">
-          <legend>When do you prefer to code?</legend>
-              <label>
-              <input type="checkbox" name="time">
-              Bright & Early 🌅
-              </label><br>
-              <label>
-              <input type="checkbox" name="time">
-              Sunny Afternoon ☀️
-              </label><br>
-              <label>
-              <input type="checkbox" name="time">
-              Night Owl 🌙
-              </label><br>
-              <label>
-              <input type="checkbox" name="time">
-              2 AM (Why do I do this to myself?) 😴
-              </label><br>
-        </fieldset>
-         <fieldset name="send_me_a:message">
-          <legend>Seend me a Message:</legend>
-              <label>
-                Message: 
-              <textarea name="message" id="message" placeholder="describe what happends"></textarea>
-              </label><br>
-              <button type="button">Clean!</button>
-              <button type="submit">Submit!</button>
-             
-        </fieldset>
-      </form>
-    </section>
+  <h2>Contact me</h2>
+  <form>
+    <label>Name:
+      <input type="text" placeholder="Enter your name" name="name">
+    </label>
+    <label>Email:
+      <input type="email" placeholder="Enter your email" name="email">
+    </label>
+    <label>Organization:
+      <input type="text" placeholder="Enter your Organization" name="organization">
+    </label>
+    <label>Role:
+      <input type="text" placeholder="Enter your Role" name="role">
+    </label>
+    <label>
+    Reason for Contact:
+    <select name="reason_for_contact">
+      <option value="">--Select an Option--</option>
+      <option value="job_offer">Job Offer</option>
+      <option value="questions">Questions</option>
+      <option value="mentoring">Mentoring</option>
+    </select>
+    </label>
+
+    <fieldset>
+      <legend>When do you prefer to code?</legend>
+      <label><input type="checkbox" name="time"> Bright & Early 🌅</label><br>
+      <label><input type="checkbox" name="time"> Sunny Afternoon ☀️</label><br>
+      <label><input type="checkbox" name="time"> Night Owl 🌙</label><br>
+      <label><input type="checkbox" name="time"> 2 AM (Why do I do this to myself?) 😴</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Send me a Message:</legend>
+      <label>Message:
+        <textarea name="message" placeholder="Describe your message..."></textarea>
+      </label>
+    </fieldset>
+
+    <button type="button">Clear</button>
+    <button type="submit">Submit</button>
+  </form>
+</section>
       <hr>
         <h2>Lenguages</h2>
           <ul>

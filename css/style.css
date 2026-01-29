@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, sans-serif;
   background-color: #0b2c59;
@@ -9,6 +10,11 @@ header{
      align-items: center;
      justify-content: center;
 }
+.header-content{
+  text-align: center;
+  padding: 40px 20px;
+}
+
 
 h1{
     text-align: center;
@@ -20,6 +26,7 @@ h1{
 h2{
     color: #00D1FF;
     font-size: 3rem;
+    margin-bottom: 40px;
     
 }
 header img {
@@ -37,4 +44,116 @@ header img {
  }
  a:hover{
   color: #FFFFFF;
+}
+
+
+/* Título de sección Skills */
+#skills h2 {
+  color: #00D1FF;
+  
+}
+
+/* Contenedor de columnas */
+.skills-columns {
+  padding-left: 20px;
+}
+
+/* Cada grupo de skills */
+.skill-group {
+  display: inline-block;
+  vertical-align: top;
+  width: 22%;
+  margin-right: 2%;
+  margin-bottom: 20px;
+  
+}
+
+/* Títulos de los grupos */
+.skill-group h3 {
+  color: #00D1FF;
+  margin-bottom: 10px;
+  
+}
+
+/* Lista de habilidades */
+.skill-group ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: white;
+}
+
+.skill-group li {
+  margin-bottom: 6px;
+}
+
+/* SECCIÓN DE CONTACTO */
+form {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #0b2c59;
+  border: 1px solid #00D1FF;
+  border-radius: 5px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Label encima del input */
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #00D1FF;
+}
+
+/* Inputs, textarea, select */
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 1px dotted #00D1FF;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Checkbox en línea con su texto */
+form input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+/* Fieldsets */
+form fieldset {
+  border: 1px dashed #00D1FF;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+form legend {
+  color: #00D1FF;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Botones */
+form button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: transparent;
+  color: #00D1FF;
+  border: 1px solid #00D1FF;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+form button:hover {
+  background-color: #00D1FF;
+  color: #0b2c59;
+}
+option, option:hover{
+  color:black;
 }
