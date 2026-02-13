@@ -1,204 +1,464 @@
-/* =========
-   Colors
-   ========= */
 :root{
-  --navy: #0b2c59;       /* fondo azul oscuro */
-  --navy-2: #08305f;     /* variación */
-  --cyan: #00D1FF;       /* azul claro (acento) */
-  --gold: #FFD166;       /* dorado para encabezados */
-  --white: #ffffff;
-  --muted: rgba(255,255,255,.85);
+  --navy:#083a6d;
+  --navy2:#072f59;
+  --navy3:#06284d;
+  --cyan:#00b7e6;
+  --cyan2:#8bf2ff;
+  --left:#e7e7e7;
+  --ink:#0b2c59;
+  --text:#1a1a1a;
+  --muted:#6b6b6b;
+  --gold:#f2c24f;
 }
 
-/* =========
-   Base
-   ========= */
-*{ box-sizing: border-box; }
+*{ box-sizing:border-box; }
 
 body{
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-  background: var(--navy);
-  color: var(--white);
-  line-height: 1.5;
+  margin:0;
+  background:#fff; /* BODY blanco */
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
 }
 
-/* links */
-a{ color: var(--gold); text-decoration: none; }
-a:hover{ color: var(--white); text-decoration: underline; }
+a{ color: var(--cyan); text-decoration:none; }
+a:hover{ text-decoration:underline; }
 
-/* headings (mantener dorado en enunciados) */
-h1{
-  margin: 0;
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  letter-spacing: .5px;
-  color: var(--cyan);
-  text-shadow: 3px 3px 0 var(--gold);
+.cv{
+  width: 900px;
+  margin: 0 auto;
+  background:#fff;
 }
 
-h2{
-  margin: 2.2rem 0 1rem;
-  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
-  color: var(--gold);
-}
-
-h3{
-  color: var(--cyan);
-  margin: 1.2rem 0 .6rem;
-}
-
-/* =========
-   Header hero (franja superior diagonal + foto circular)
-   ========= */
-header{
+/* ================= HEADER ================= */
+.cv-header{
   position: relative;
+  height: 200px;
+  display: grid;
+  grid-template-columns: 330px 1fr;
   overflow: hidden;
-  padding: 3rem 1.25rem 2.25rem;
 }
 
-/* Fondo azul con “corte” diagonal */
-header::before{
+/* izquierda gris del header */
+.header-left{
+  background: var(--left);
+  position: relative;
+}
+
+/* derecha del header: azul arriba con corte diagonal + blanco abajo */
+.header-right{
+  position: relative;
+  background: #fff;
+  padding: 26px 50px 0 20px;
+  text-align: right;
+}
+
+/* bloque azul diagonal */
+.header-right::before{
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(135deg, var(--navy-2) 0%, var(--navy) 65%);
-  z-index:0;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy2) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 64%, 0 96%);
+  z-index: 0;
 }
 
-/* Banda cyan diagonal como la plantilla */
-header::after{
+/* diagonales cyan (dos capas) */
+.header-stripes{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index: 1;
+}
+.header-stripes::before{
   content:"";
   position:absolute;
-  left:-25%;
-  top: 55%;
-  width: 160%;
-  height: 140px;
-  background: linear-gradient(90deg, rgba(0,209,255,.95), rgba(0,209,255,.55));
-  transform: rotate(-8deg);
-  z-index:0;
-  filter: blur(.2px);
+  left:-18%;
+  top: 46px;
+  width:150%;
+  height:16px;
+  background: var(--cyan2);
+  transform: rotate(-9deg);
+}
+.header-stripes::after{
+  content:"";
+  position:absolute;
+  left:-22%;
+  top: 64px;
+  width:160%;
+  height:64px;
+  background: var(--cyan);
+  transform: rotate(-9deg);
 }
 
-/* contenido del header */
-.header-content{
-  position: relative;
-  z-index:1;
-  max-width: 980px;
-  margin: 0 auto;
-  text-align: center;
+/* Foto grande circular (como plantilla) */
+.avatar-ring{
+  position:absolute;
+  left: 40px;
+  top: 12px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.65);
+  display:grid;
+  place-items:center;
+  z-index: 2;
 }
 
-/* Foto circular con aro blanco grande */
-header img{
-  width: 190px;
-  height: 190px;
+.avatar{
+  width: 185px;
+  height: 185px;
   border-radius: 50%;
   object-fit: cover;
-  border: 10px solid rgba(255,255,255,.95);
-  box-shadow: 0 10px 25px rgba(0,0,0,.35);
-  margin: 1.25rem auto .75rem;
-  display:block;
+  border: 14px solid #fff;
+  box-shadow: 0 14px 26px rgba(0,0,0,.22);
+  background:#fff;
 }
 
-/* Subtítulo/rol debajo del nombre (si lo tienes como p o span) */
-header .subtitle,
-header p{
-  margin: .25rem 0 0;
-  color: var(--muted);
-}
-
-/* =========
-   Main container (para que el contenido se lea bien)
-   ========= */
-main{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 1.5rem 1.25rem 3.25rem;
-}
-
-/* Si tu contenido no está dentro de <main>, no pasa nada, esto solo mejora
-   cuando lo uses. */
-
-/* =========
-   Footer diagonal como la plantilla
-   ========= */
-footer{
+/* Nombre + rol */
+.name{
   position: relative;
-  overflow: hidden;
-  padding: 2.25rem 1.25rem;
-  background: var(--navy-2);
-  margin-top: 2.5rem;
-  text-align: center;
+  margin: 10px 0 6px;
+  font-size: 44px;
+  line-height: 1.05;
+  color: gold;
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
+.role{
+  position: relative;
+  margin: 0;
+  color: var(--gold);
+  letter-spacing: 2px;
+  font-size: 16px;
+  z-index: 2;
+}
+
+/* ================= BODY GRID ================= */
+.cv-body{
+  display:grid;
+  grid-template-columns: 330px 1fr;
+  min-height: 800px;
+}
+
+/* LEFT COL */
+.left-col{
+  background: var(--left);
+  padding: 22px 18px 28px;
+}
+
+.block{
+  margin-bottom: 26px;
+}
+
+.left-title{
+  margin: 18px 0 12px;
+  font-size: 28px;
+  text-align:center;
+  color: var(--ink);
+  letter-spacing: 1px;
+}
+
+.left-subtitle{
+  margin: 12px 0 8px;
+  color: var(--ink);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-list{
+  list-style:none;
+  padding:0;
+  margin: 0;
+}
+
+.contact-list li{
+  display:flex;
+  gap: 10px;
+  align-items:flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.icon{
+  width: 34px;
+  height: 34px;
+  display:grid;
+  place-items:center;
+  border-radius: 50%;
+  background: var(--cyan);
+  color: #fff;
+  font-size: 15px;
+  flex: 0 0 34px;
+}
+
+.txt{
+  font-size: 13px;
+  color: #2b2b2b;
+  line-height: 1.3;
+}
+
+.muted{ color: var(--muted); }
+
+.hint{
+  margin: 10px 0 0;
+  font-size: 11px;
   color: var(--muted);
 }
 
-footer::before{
+.bullets{
+  margin: 8px 0 0 18px;
+  padding:0;
+}
+.bullets li{
+  margin: 6px 0;
+  font-size: 13px;
+  color:#2a2a2a;
+}
+
+/* RIGHT COL */
+.right-col{
+  background:#fff;
+  padding: 22px 30px 30px;
+}
+
+/* pill titles like template */
+.pill-title{
+  display:inline-block;
+  padding: 12px 34px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy3) 100%);
+  color:#fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 16px auto 14px;
+  text-align:center;
+  min-width: 260px;
+}
+
+.right-section{
+  margin: 10px 0 26px;
+  text-align: center;
+}
+
+.para{
+  margin: 0 auto;
+  max-width: 520px;
+  color: #3a3a3a;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* timeline (Education/Experience) */
+.timeline{
+  max-width: 620px;
+  margin: 10px auto 0;
+  position: relative;
+  text-align:left;
+}
+
+.t-row{
+  display:grid;
+  grid-template-columns: 70px 24px 1fr;
+  gap: 12px;
+  align-items:flex-start;
+  margin: 14px 0;
+}
+
+.t-year{
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.t-dot{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ink);
+  margin-top: 3px;
+  position: relative;
+}
+
+.t-row:not(:last-child) .t-dot::after{
   content:"";
   position:absolute;
-  left:-20%;
-  top:-55px;
-  width: 150%;
-  height: 120px;
-  background: linear-gradient(90deg, rgba(0,209,255,.9), rgba(0,209,255,.35));
-  transform: rotate(7deg);
-  z-index:0;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 62px;
+  background: var(--ink);
+  opacity: .95;
 }
 
-footer > *{
-  position: relative;
-  z-index:1;
-}
-
-/* =========
-   Tu form (mantengo tu idea, pero más limpio)
-   ========= */
-form{
-  width: 100%;
-  max-width: 700px;
-  margin: 1.5rem auto 0;
-  padding: 20px;
-  background-color: transparent;
-  border: 1px solid var(--cyan);
+.t-card{
+  background:#f2f2f2;
   border-radius: 10px;
-  color: var(--white);
+  padding: 12px 14px;
+  border: 1px solid rgba(0,0,0,.05);
 }
 
-form label{
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 700;
-  color: var(--cyan);
+.t-card h4{
+  margin:0 0 6px;
+  color: var(--ink);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
 }
 
-form input, form select, form textarea{
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 18px;
-  background-color: rgba(255,255,255,.06);
-  border: 1px solid rgba(0,209,255,.55);
-  color: var(--white);
-  border-radius: 8px;
-  outline: none;
+.t-card p{
+  margin:0;
+  color:#4a4a4a;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
-form input:focus, form select:focus, form textarea:focus{
-  border-color: var(--cyan);
-  box-shadow: 0 0 0 3px rgba(0,209,255,.20);
-}
-
-form button{
+.btn-link{
+  display:inline-block;
+  margin-top: 12px;
   padding: 10px 16px;
-  margin-right: 10px;
-  background-color: transparent;
-  color: var(--cyan);
-  border: 1px solid var(--cyan);
   border-radius: 10px;
-  cursor: pointer;
+  background: var(--cyan);
+  color:#fff;
+  font-weight: 700;
 }
 
-form button:hover{
-  background-color: var(--cyan);
-  color: var(--navy);
+/* FORM */
+.form{
+  max-width: 620px;
+  margin: 0 auto;
+  text-align:left;
+  padding: 14px;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 12px;
+  background: #fbfbfb;
 }
 
-option{ color: #000; }
+.form label{
+  display:block;
+  margin: 10px 0;
+}
+
+.form span{
+  display:block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.row2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form input,
+.form select,
+.form textarea{
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.12);
+  background:#fff;
+  outline:none;
+}
+
+.form textarea{
+  min-height: 110px;
+  resize: vertical;
+}
+
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.actions button{
+  border:0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor:pointer;
+}
+
+.actions button[type="reset"]{
+  background:#e9e9e9;
+  color:#1f1f1f;
+}
+
+.actions button[type="submit"]{
+  background: var(--ink);
+  color:#fff;
+}
+
+/* ================= FOOTER ================= */
+.cv-footer{
+  position:relative;
+  height: 140px;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy2) 100%);
+  overflow:hidden;
+}
+
+.footer-stripes{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+.footer-stripes::before{
+  content:"";
+  position:absolute;
+  left:-22%;
+  bottom: 58px;
+  width:150%;
+  height:16px;
+  background: var(--cyan2);
+  transform: rotate(10deg);
+}
+.footer-stripes::after{
+  content:"";
+  position:absolute;
+  left:-26%;
+  bottom: 24px;
+  width:165%;
+  height:64px;
+  background: var(--cyan);
+  transform: rotate(10deg);
+}
+
+.footer-inner{
+  position:relative;
+  z-index:2;
+  height: 100%;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding: 18px;
+  color: rgba(255,255,255,.9);
+  font-size: 12px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 940px){
+  .cv{ width: 100%; }
+  .cv-body, .cv-header{ grid-template-columns: 300px 1fr; }
+  .header-right{ padding-right: 20px; }
+  .name{ font-size: 36px; }
+}
+
+@media (max-width: 740px){
+  .cv-header{ grid-template-columns: 1fr; height: 260px; }
+  .header-left{ height: 140px; }
+  .header-right{ height: 120px; text-align:center; padding: 22px 16px; }
+  .header-right::before{ clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%); }
+  .avatar-ring{ left: 50%; transform: translateX(-50%); top: 10px; }
+  .name{ text-align:center; }
+
+  .cv-body{ grid-template-columns: 1fr; }
+  .left-col{ padding-top: 26px; }
+  .row2{ grid-template-columns: 1fr; }
+}

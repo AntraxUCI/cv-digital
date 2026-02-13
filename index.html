@@ -1,156 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
   <title>CV-Digital</title>
 </head>
 <body>
-  <!-- header -->
-  <header>
-  <div class="header-content">
-    <h1>Juan Carlos Guardiola Rodriguez</h1>
-    <img src="img/photo_2025-12-04_13-42-16.jpg" alt="Foto de perfil">
-    <p class="subtitle">Software Developer | Orlando, FL, United States</p>
-  </div>
-</header>
-  <hr>
-  <!-- main -->
-  <main>
-    <!-- profile section -->
-<section aria-labelledby="profile">
-  <h2 id="profile">Profile</h2>
-  <p>
-    Computer Science Engineer graduated in 2019 from the University of 
-    Computer Sciences in Cuba, with knowledge mainly in FrontEnd, including 
-    HTML5, JavaScript, CSS, CSS3, Bootstrap, React, React Native, and some 
-    BackEnd knowledge in Laravel, Symfony, Angular, among others.
-  </p>
-</section>
-      <hr>
-      <!-- skills section -->
- <section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-columns">
-    <div class="skill-group">
-      <h3>Web Development</h3>
-      <ul>
-        <li>HTML & CSS</li>
-        <li>JavaScript</li>
-        <li>DOM Manipulation</li>
-        <li>Node.js & Express</li>
-        <li>Python & Flask</li>
-        <li>React & Redux</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <h3>Database</h3>
-      <ul>
-        <li>SQL</li>
-        <li>PostgreSQL</li>
-        <li>MongoDB</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <h3>Testing</h3>
-      <ul>
-        <li>Unit Testing with Jasmine</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <h3>Other</h3>
-      <ul>
-        <li>Git & GitHub</li>
-        <li>Command Line</li>
-        <li>Data Structures</li>
-        <li>Algorithms</li>
-      </ul>
-    </div>
-  </div>
-</section>
-      <hr>
-      <!-- proyects section -->
-    <section aria-labelledby="proyects">
-        <h2 id="proyects">Proyects</h2>
-        <h3>Here at the following link you can access my GitHub repository and see some of the projects I have worked on 👇</h3>
-        <a href="https://github.com/AntraxUCI?tab=repositories">Proyectos</a>
-    </section>  
-      <hr>
-      <!-- experiences -->
-    <section aria-labelledby="experience">
-        <h2 id="experience">Experience</h2>
-        <h3>Position / Rol</h3>
-    </section>
-      <hr>
-      <!-- educations section -->
-    <section aria-labelledby="education">  
-        <h2 id="education">Education</h2>
-        <ul>
-          <li><strong>Springboard</strong></li>
-          <li><strong>University of Computer Sciences</strong></li>
-          <li>Cursos de Couresera</li>
-          <li>Cursos de Platzy</li>
-          <li>Cursos de Udemy</li>
-        </ul>
-    </section>
-    <hr>
-    <!-- Contact me Section -->
-    <section aria-labelledby="contact-me">
-  <h2>Contact me</h2>
-  <form>
-    <label>Name:
-      <input type="text" placeholder="Enter your name" name="name">
-    </label>
-    <label>Email:
-      <input type="email" placeholder="Enter your email" name="email">
-    </label>
-    <label>Organization:
-      <input type="text" placeholder="Enter your Organization" name="organization">
-    </label>
-    <label>Role:
-      <input type="text" placeholder="Enter your Role" name="role">
-    </label>
-    <label>
-    Reason for Contact:
-    <select name="reason_for_contact">
-      <option value="">--Select an Option--</option>
-      <option value="job_offer">Job Offer</option>
-      <option value="questions">Questions</option>
-      <option value="mentoring">Mentoring</option>
-    </select>
-    </label>
 
-    <fieldset>
-      <legend>When do you prefer to code?</legend>
-      <label><input type="checkbox" name="time"> Bright & Early 🌅</label><br>
-      <label><input type="checkbox" name="time"> Sunny Afternoon ☀️</label><br>
-      <label><input type="checkbox" name="time"> Night Owl 🌙</label><br>
-      <label><input type="checkbox" name="time"> 2 AM (Why do I do this to myself?) 😴</label>
-    </fieldset>
+  <div class="cv">
 
-    <fieldset>
-      <legend>Send me a Message:</legend>
-      <label>Message:
-        <textarea name="message" placeholder="Describe your message..."></textarea>
-      </label>
-    </fieldset>
+    <!-- HEADER (igual estilo plantilla) -->
+    <header class="cv-header">
+      <div class="header-stripes"></div>
 
-    <button type="button">Clear</button>
-    <button type="submit">Submit</button>
-  </form>
-</section>
-      <hr>
-        <h2>Lenguages</h2>
-          <ul>
-            <li>Spanish----- Native, </li>
+      <div class="header-left">
+        <div class="avatar-ring">
+          <img class="avatar" src="img/photo_2025-12-04_13-42-16.jpg" alt="Profile photo">
+        </div>
+      </div>
+
+      <div class="header-right">
+        <h1 class="name">Juan Carlos Guardiola<br>Rodriguez</h1>
+        <p class="role">SOFTWARE DEVELOPER</p>
+      </div>
+    </header>
+
+    <!-- BODY (2 columnas como la plantilla) -->
+    <div class="cv-body">
+
+      <!-- LEFT COLUMN -->
+      <aside class="left-col">
+
+        <section class="block">
+          <h2 class="left-title">CONTACT</h2>
+
+          <ul class="contact-list">
+            <li>
+              <span class="icon">✉️</span>
+              <span class="txt">Email: <span class="muted">carlyasi.5831@gmail.com</span></span>
+            </li>
+            <li>
+              <span class="icon">📍</span>
+              <span class="txt">Location: <span class="muted">Apopka, FL, United States</span></span>
+            </li>
+            <li>
+              <span class="icon">💻</span>
+              <span class="txt">GitHub: <a href="https://github.com/AntraxUCI?tab=repositories">AntraxUCI</a></span>
+            </li>
+          </ul>
+          
+          <!-- <p class="hint">
+           
+          </p> -->
+        </section>
+
+        <section class="block">
+          <h2 class="left-title">SKILLS</h2>
+
+          <!-- Skills-->
+          <div class="skill-group">
+            <h3 class="left-subtitle">Web Development</h3>
+            <ul class="bullets">
+              <li>HTML & CSS</li>
+              <li>JavaScript</li>
+              <li>DOM Manipulation</li>
+              <li>WSL</li>
+              <li>Java & PHP</li>
+              <li>React & React Native</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="left-subtitle">Database</h3>
+            <ul class="bullets">
+              <li>SQL</li>
+              <li>PostgreSQL</li>
+            </ul>
+          </div>
+
+          <!-- <div class="skill-group"> 
+            <h3 class="left-subtitle">Testing</h3>
+            <ul class="bullets">
+              <li>Unit Testing with Jasmine</li>
+            </ul>
+          </div>
+          -->
+          <div class="skill-group">
+            <h3 class="left-subtitle">Other</h3>
+            <ul class="bullets">
+              <li>Git & GitHub</li>
+              <li>Google Drive</li> 
+            </ul>
+          </div>
+        </section>
+
+        <section class="block">
+          <h2 class="left-title">LANGUAGES</h2>
+          <ul class="bullets">
+            <li>Spanish — Native</li>
             <li>English</li>
           </ul>
-    </main>
-   <!-- footer -->
-    <footer>
-      <p>© <time datetime="2026">2026</time> Juan Carlos Guardiola Rodriguez · CV Digital</p>
+        </section>
+
+      </aside>
+
+      <!-- RIGHT COLUMN -->
+      <main class="right-col">
+
+        <section class="right-section">
+          <div class="pill-title">ABOUT ME</div>
+          <p class="para">
+            Computer Science Engineer graduated in 2019 from the University of
+            Computer Sciences in Cuba, with knowledge mainly in FrontEnd, including
+            HTML5, JavaScript, CSS, CSS3, Bootstrap, React, React Native, and some
+            BackEnd knowledge in Laravel, Symfony, Angular, among others.
+          </p>
+        </section>
+
+        <section class="right-section">
+          <div class="pill-title">EDUCATION</div>
+
+          <!-- Timeline simple  -->
+          <div class="timeline">
+            <div class="t-row">
+              <div class="t-year">2019</div>
+              <div class="t-dot"></div>
+              <div class="t-card">
+                <h4>University of Computer Sciences</h4>
+                <p>Computer Science Engineer (Graduated)</p>
+              </div>
+            </div>
+
+            <div class="t-row">
+              <div class="t-year">—</div>
+              <div class="t-dot"></div>
+              <div class="t-card">
+                <h4>Springboard</h4>
+                <p>Software Development Bootcamp</p>
+              </div>
+            </div>
+
+            <div class="t-row">
+              <div class="t-year">—</div>
+              <div class="t-dot"></div>
+              <div class="t-card">
+                <h4>Online Courses</h4>
+                <p>Coursera · Platzi · Udemy</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="right-section">
+          <div class="pill-title">EXPERIENCE</div>
+          <div class="timeline">
+            <div class="t-row">
+              <div class="t-year">—</div>
+              <div class="t-dot"></div>
+              <div class="t-card">
+                <h4>Position / Role</h4>
+                <p>(Add your experience details here)</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="right-section">
+          <div class="pill-title">PROJECTS</div>
+          <p class="para">
+            Here at the following link you can access my GitHub repository and see some of the projects I have worked on 👇
+          </p>
+          <a class="btn-link" href="https://github.com/AntraxUCI?tab=repositories">View Projects</a>
+        </section>
+
+        <!-- Form -->
+        <section class="right-section">
+          <div class="pill-title">CONTACT ME</div>
+
+          <form class="form">
+            <div class="row2">
+              <label>
+                <span>Name</span>
+                <input type="text" placeholder="Enter your name" name="name">
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" placeholder="Enter your email" name="email">
+              </label>
+            </div>
+
+            <div class="row2">
+              <label>
+                <span>Organization</span>
+                <input type="text" placeholder="Enter your Organization" name="organization">
+              </label>
+              <label>
+                <span>Role</span>
+                <input type="text" placeholder="Enter your Role" name="role">
+              </label>
+            </div>
+
+            <label>
+              <span>Reason for Contact</span>
+              <select name="reason_for_contact">
+                <option value="">--Select an Option--</option>
+                <option value="job_offer">Job Offer</option>
+                <option value="questions">Questions</option>
+                <option value="mentoring">Mentoring</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Message</span>
+              <textarea name="message" placeholder="Describe your message..."></textarea>
+            </label>
+
+            <div class="actions">
+              <button type="reset">Clear</button>
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- FOOTER (diagonales) -->
+    <footer class="cv-footer">
+      <div class="footer-stripes"></div>
+      <div class="footer-inner">
+        <p>© <time datetime="2026">2026</time> Juan Carlos Guardiola Rodriguez · CV Digital</p>
+      </div>
     </footer>
-   
+
+  </div>
+
 </body>
 </html>
